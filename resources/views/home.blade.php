@@ -9,6 +9,17 @@
 <body class="bg-gray-100 text-gray-800">
 
   <div class="w-[50%] mx-auto py-10">
+    
+    <div class="flex justify-between items-center mb-5">
+      <h1 class="text-xl font-semibold text-blue-600">
+        Hallo, {{ Auth::check() ? Auth::user()->name : 'Guest'}}
+      </h1>
+      <form action="{{ route ('logout') }}" method="post">
+        @csrf
+        <button type="submit" class="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600">Logout</button>
+      </form>
+    </div>
+
     <!-- Textarea and Button -->
     <div class="bg-white p-6 rounded-xl shadow mb-8">
       <textarea
