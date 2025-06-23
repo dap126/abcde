@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CuitController;
+
+Route::get('/', [CuitController::class, 'index'])->middleware('auth')->name('home');
 
 Route::get('/', function () {
     return view('home');
@@ -21,3 +24,4 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/post', [CuitController::class, 'post'])->name('cuit.post')->middleware('auth');

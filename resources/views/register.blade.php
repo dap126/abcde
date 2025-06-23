@@ -17,7 +17,6 @@
             @endforeach
         </ul>
       </div>
-
     @endif
 
     <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">Register to Cuit</h2>
