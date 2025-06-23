@@ -6,10 +6,6 @@ use App\Http\Controllers\CuitController;
 
 Route::get('/', [CuitController::class, 'index'])->middleware('auth')->name('home');
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
-
 Route::middleware('guest')->group(function () {
     Route::get('/login', function () {
         return view('login');
